@@ -27,7 +27,7 @@ function squareClick(event){
     if (bombs.includes(my_box)){
         event.target.style.backgroundColor = 'red';
     }else {
-        reveal(my_box)
+       reveal(my_box)
     }
 }
 function setFlag(event){
@@ -51,8 +51,7 @@ function random_numbers(number,max) {
 function getConnectedBoxes(index) {
     let d = [];
     let row = Math.ceil(index/width)
-    let column = Math.ceil(index - height * (row-1))
-    console.log('cell:'+index+' y:'+row+' x'+column);
+    let column = width - (width*row - index)
     if (row < height){
         d.push(index + +width); //width
     }
